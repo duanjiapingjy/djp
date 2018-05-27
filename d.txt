@@ -11,3 +11,6 @@ git reset --hard commit_id
 
 git checkout -- fileName
 git rm fileName
+
+git remote add origin <>
+git push -u origin master

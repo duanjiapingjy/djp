@@ -11,3 +11,10 @@ git reset --hard commit_id
 
 git checkout -- fileName
 git rm fileName
+
+#branch
+git branch
+git branch <branchName>
+git checkout <branchName>
+
+git checkout -b <branchName>

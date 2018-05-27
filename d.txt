@@ -1,3 +1,6 @@
+git config --global user.name  <userName>
+git config --global user.email <email>
+
 git init
 git add fileName
 git commit -m ""
@@ -12,5 +15,12 @@ git reset --hard commit_id
 git checkout -- fileName
 git rm fileName
 
-git remote add origin <>
+ssh-keygen -t rsa -C <email>
+ssh -T <email>
+
+git remote rm origin
+git remote add origin <url>
 git push -u origin master
+git push origin master
+
+git clone <……>

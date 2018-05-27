@@ -1,3 +1,13 @@
-duanjiaping 
-jy
-2012
+git init
+git add fileName
+git commit -m ""
+
+git status
+git log
+git reflog
+
+git reset --hard HEAD^
+git reset --hard commit_id
+
+git checkout -- fileName
+git rm fileName

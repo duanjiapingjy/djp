@@ -8,6 +8,7 @@ git log --pretty=oneline
 git log --graph --pretty=oneline --abbrev-commit
 git reflog
 
+版本回退
 git reset --hard HEAD^
 git reset --hard commit_id
 
@@ -40,6 +41,39 @@ branch checkout master
 modify d.txt
 git add d.txt
 git commit -m ""
+git merge dev2
+#$ git merge dev2
+#Auto-merging d.txt
+#CONFLICT (content): Merge conflict in d.txt
+#Automatic merge failed; fix conflicts and then commit the result.
+git status
+#$ git status
+#On branch master
+#You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+#Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   d.txt
+
+#no changes added to commit (use "git add" and/or "git commit -a")
+cat d.txt
+git add d.txt
+git commit -m "conflict fixed"
+$ git log --graph --pretty=oneline --abbrev-commit
+*   a763341 (HEAD -> master) conflict fixed
+|\
+| * fe7c115 (dev2) branch dev2 modify
+* | 841d389 branch master modify
+|/
+* 810e84f learning conflict fix
+* f4b01d1 branch dev modify
+* d6598aa learning branch
+* 77e71bf duanjiaping New
+git branch -d dev2
+
 
 ##############
 <<<<<<< HEAD
@@ -49,4 +83,17 @@ on branch dev2 ++++++++
 
 
 >>>>>>> dev2
+
+分支策略
+#learning --no--ff
+合并分支时，如果可能，Git会用Fast forward模式，这种模式下，删除分支会丢掉分支信息
+强制禁用Fast forward模式之后，Git就会在merge是生成一个新的commit，这样，就可以从分支历史上看出分支信息
+git checkout -b dev3
+mofify d.txt
+git add d.txt
+git commit -m "dev3 modify"
+git checkout master
+git merge --no--ff -m "merge with no--ff" dev3
+git log --graph --oneline --abbrev-commit
+
 

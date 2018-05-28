@@ -24,6 +24,8 @@ git checkout master
 git merge dev
 git branch -d dev
 
+##############
+on branch dev ++++++++
 
 
 

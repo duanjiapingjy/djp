@@ -5,6 +5,7 @@ git commit -m ""
 git status
 git log
 git log --pretty=oneline
+git log --graph --pretty=oneline --abbrev-commit
 git reflog
 
 git reset --hard HEAD^
@@ -26,6 +27,19 @@ git branch -d dev
 
 ##############
 on branch dev ++++++++
+
+
+#fix conflict
+#branch dev2 modify
+git checkout -b dev2
+modify d.txt
+git add d.txt
+git commit -m ""
+branch checkout master
+#branch master modify
+modify d.txt
+git add d.txt
+git commit -m ""
 
 
 

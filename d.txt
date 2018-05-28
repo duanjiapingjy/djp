@@ -42,5 +42,11 @@ git add d.txt
 git commit -m ""
 
 ##############
+<<<<<<< HEAD
 on branch master ++++++++
+=======
+on branch dev2 ++++++++
+
+
+>>>>>>> dev2
 

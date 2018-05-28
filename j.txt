@@ -17,3 +17,19 @@ git stash pop 恢复并删除stash的内容
 git stash apply stash@{0} 恢复后，stash的内容不删除，用git stash drop 来删除
 
 
+feature分支
+(1)需求：添加一个新功能
+(2)创建一个新的分支，进行各种操作
+git checkout -b feature-01
+(3)在新分支上
+git add ……
+git commit -m ""
+(4)切换回dev分支
+注意：master应当是一个稳定的版本，平常操作都在dev分支上
+git checkout dev
+(5)将分支合并
+git merge --no-ff -m "" feature-01
+(6)合并分支之后，删除feature-01分支，完成工作
+git branch -d feature-01
+(7)在合并分支之前，要销毁分支
+git branch -D feature-01(如果使用-d，git会提示当前分支没有被完全删除；使用-D是强制删除)

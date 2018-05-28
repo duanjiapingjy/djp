@@ -1,3 +1,29 @@
-duanjiaping 
-jy
-2012
+git init
+git add fileName
+git commit -m ""
+
+git status
+git log
+git log --pretty=oneline
+git reflog
+
+git reset --hard HEAD^
+git reset --hard commit_id
+
+git checkout -- fileName
+git rm fileName
+
+#learning branch
+git branch
+git branch <branchName>
+git checkout <branchName>
+modify d.txt
+git add d.txt
+git commit -m ""
+git checkout master
+git merge dev
+git branch -d dev
+
+
+
+

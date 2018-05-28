@@ -1,3 +1,8 @@
+
+git config --global user.name  <userName>
+git config --global user.email <email>
+
+
 git init
 git add fileName
 git commit -m ""
@@ -14,6 +19,7 @@ git reset --hard commit_id
 
 git checkout -- fileName
 git rm fileName
+
 
 #learning branch
 git branch
@@ -76,7 +82,6 @@ git branch -d dev2
 
 
 ##############
-<<<<<<< HEAD
 on branch master ++++++++
 =======
 on branch dev2 ++++++++
@@ -121,4 +126,15 @@ on granph dev3 ++++++++++
 bug issue-01
 ###########
 bug issue-02
+
+=======
+ssh-keygen -t rsa -C <email>
+ssh -T <email>
+
+git remote rm origin
+git remote add origin <url>
+git push -u origin master
+git push origin master
+
+git clone <……>
 

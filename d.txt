@@ -18,4 +18,9 @@ git branch <branchName>
 git checkout <branchName>
 
 git checkout -b <branchName>
+<<<<<<< HEAD
 2+++++
+=======
+
+1.+++++++++++
+>>>>>>> c2b72acb798ee1f813ba599dfbee55e626b89800

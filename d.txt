@@ -85,7 +85,7 @@ on branch dev2 ++++++++
 >>>>>>> dev2
 
 分支策略
-#learning --no--ff
+#learning --no-ff
 合并分支时，如果可能，Git会用Fast forward模式，这种模式下，删除分支会丢掉分支信息
 强制禁用Fast forward模式之后，Git就会在merge是生成一个新的commit，这样，就可以从分支历史上看出分支信息
 git checkout -b dev3
@@ -93,8 +93,26 @@ mofify d.txt
 git add d.txt
 git commit -m "dev3 modify"
 git checkout master
-git merge --no--ff -m "merge with no--ff" dev3
+git merge --no-ff -m "merge with no--ff" dev3
 git log --graph --oneline --abbrev-commit
+$ git log --graph --pretty=oneline --abbrev-commit
+*   fb5faad (HEAD -> master) merge with no--ff
+|\
+| * 334fa34 (dev3) dev3 modify no--ff
+|/
+* e74083f learning branch manage no--ff
+*   a763341 conflict fixed
+|\
+| * fe7c115 branch dev2 modify
+* | 841d389 branch master modify
+|/
+* 810e84f learning conflict fix
+* f4b01d1 branch dev modify
+* d6598aa learning branch
+* 77e71bf duanjiaping New
+
+
+
 
 ##############
 on granph dev3 ++++++++++

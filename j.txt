@@ -1,0 +1,19 @@
+bug分支
+(1)保存当前工作现场
+git stash
+(2)切换到要修复bug的分支
+git checkout <>
+(3)创建临时分支修复bug
+git checkout -b issue-01
+(4)修复bug并提交
+git add <>
+git commit -m ""
+(5)切换到要修复bug的分支，完成合并
+git checkout <>
+git merge --no-ff -m "" issue-01
+(6)回到之前的工作现场
+git stash list
+git stash pop 恢复并删除stash的内容
+git stash apply stash@{0} 恢复后，stash的内容不删除，用git stash drop 来删除
+
+

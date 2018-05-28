@@ -17,3 +17,17 @@ git remote -v 更详细的信息
 ----解决冲突-----在本地提交----推送
 
 rebase
+rebase操作可以把本地未push的分叉提交历史整理成直线；
+rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。
+
+tag
+tag指向某一次提交
+git tag 查看当前分支的标签
+标签总是与某一次提交挂钩，如果某一次commit同时出现在多个分支上，那么，在每个分支上都可以看到这个标签
+git tag
+给当前提交，即HEAD指向的提交设标签
+git tag tagName
+git tag -a tagName -m "tag的详细描述信息"
+给之前的提交设标签
+git tag tagName commitID
+git tag -a tagName -m "tag的详细描述信息" commitID

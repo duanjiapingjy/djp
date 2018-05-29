@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 bug分支
 (1)保存当前工作现场
 git stash
@@ -33,3 +34,68 @@ git merge --no-ff -m "" feature-01
 git branch -d feature-01
 (7)在合并分支之前，要销毁分支
 git branch -D feature-01(如果使用-d，git会提示当前分支没有被完全删除；使用-D是强制删除)
+=======
+从本地仓库推送到远程仓库git push origin <branchName>
+从本地推送到远程可能存在远程比本地更新，使用git pull
+如果git pull提示no tracking information,说明本地分支与远程分支的链接关系没有创建，git branch --set--upstream-to branchName origin/branchName
+如果存在冲突，解决冲突 cat fileName，并在本地提交git add fileName；      git commit -m ""
+解决冲突之后，git push origin branchName 推送成功
+
+查看远程库的信息
+git remote
+git remote -v 更详细的信息
+
+
+建立本地分支，并和远程分支关联起来git checkout -b branchName origin/branchName  本地branchName最好和远程branchName一样
+
+
+多人协作
+推送push-----如果远程更新pull----如果本地分支与远程分支不存在链接关系建立链接
+----解决冲突-----在本地提交----推送
+
+rebase
+rebase操作可以把本地未push的分叉提交历史整理成直线；
+rebase的目的是使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比。
+
+tag
+tag指向某一次提交
+git tag 查看当前分支的标签
+标签总是与某一次提交挂钩，如果某一次commit同时出现在多个分支上，那么，在每个分支上都可以看到这个标签
+git tag
+给当前提交，即HEAD指向的提交设标签
+git tag tagName
+git tag -a tagName -m "tag的详细描述信息"
+给之前的提交设标签
+git tag tagName commitID
+git tag -a tagName -m "tag的详细描述信息" commitID
+git show tagName 查看某标签的详细信息
+git tag -d tagName 删除标签，如果标签没有推送到远程，这样就会直接删除
+git push origin tagName 推送标签到远程
+git push origin --tags 一次性推送所有的标签到远程
+如果标签已经推送到了远程，则删除分两步，
+一、在本地删除git tag -d tagName  二、从远程删除git push origin :refs/tags/tagName
+
+推送到远程时，忽略特殊文件，在本地仓库新建一个.gitignore文件，将想要忽略的特殊文件的文件名写入.gitignore文件，
+以后推送到远程时，就会自动忽略这些文件
+但是，.gitignore文件本身要放到版本库中，并且可以对它进行版本管理
+
+在.gitignore文件中添加了要忽略的文件的命名规则，（eg：*.java)
+此时，如果要向版本库中add相关文件，提示错误信息
+$ git add HelloWorld.java
+The following paths are ignored by one of your .gitignore files:
+HelloWorld.java
+Use -f if you really want to add them.
+使用 git check-ignore -v fileName查看是那条规则忽略了文件
+$ git check-ignore -v HelloWorld.java
+.gitignore:2:*.java     HelloWorld.java
+也可以使用git add -f fileName強制將文件添加到版本庫
+
+
+
+
+
+
+
+
+
+>>>>>>> dev

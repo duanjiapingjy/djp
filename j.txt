@@ -31,3 +31,33 @@ git tag -a tagName -m "tag的详细描述信息"
 给之前的提交设标签
 git tag tagName commitID
 git tag -a tagName -m "tag的详细描述信息" commitID
+git show tagName 查看某标签的详细信息
+git tag -d tagName 删除标签，如果标签没有推送到远程，这样就会直接删除
+git push origin tagName 推送标签到远程
+git push origin --tags 一次性推送所有的标签到远程
+如果标签已经推送到了远程，则删除分两步，
+一、在本地删除git tag -d tagName  二、从远程删除git push origin :refs/tags/tagName
+
+推送到远程时，忽略特殊文件，在本地仓库新建一个.gitignore文件，将想要忽略的特殊文件的文件名写入.gitignore文件，
+以后推送到远程时，就会自动忽略这些文件
+但是，.gitignore文件本身要放到版本库中，并且可以对它进行版本管理
+
+在.gitignore文件中添加了要忽略的文件的命名规则，（eg：*.java)
+此时，如果要向版本库中add相关文件，提示错误信息
+$ git add HelloWorld.java
+The following paths are ignored by one of your .gitignore files:
+HelloWorld.java
+Use -f if you really want to add them.
+使用 git check-ignore -v fileName查看是那条规则忽略了文件
+$ git check-ignore -v HelloWorld.java
+.gitignore:2:*.java     HelloWorld.java
+也可以使用git add -f fileName強制將文件添加到版本庫
+
+
+
+
+
+
+
+
+
